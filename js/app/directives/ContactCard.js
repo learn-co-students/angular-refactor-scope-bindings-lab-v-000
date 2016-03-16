@@ -15,7 +15,7 @@ function ContactCard() {
 			'</div>'
 		].join(''),
 		controller: function() {
-
+			this.username = this.username.toLowerCase();
 		},
 		controllerAs: 'ctrl',
 		bindToController: {
