@@ -1,24 +1,29 @@
 function ContactCard() {
 	return {
-		scope: {
+		scope: {},
+		template: [
+			'<div>',
+				'<h4>Contact Card</h4>',
+				'<label>Name:</label>',
+				'{{ ctrl.name }}',
+				'<label>Email:</label>',
+				'{{ ctrl.email }}',
+				'<label>Phone:</label>',
+				'{{ ctrl.phone }}',
+				'<label>Username:</label>',
+				'<span class="username">{{ ctrl.username }}</span>',
+			'</div>'
+		].join(''),
+		controller: function() {
+
+		},
+		controllerAs: 'ctrl',
+		bindToController: {
 			name: '=',
 			email: '=',
 			phone: '=',
 			username: '='
 		},
-		template: [
-			'<div>',
-				'<h4>Contact Card</h4>',
-				'<label>Name:</label>',
-				'{{ name }}',
-				'<label>Email:</label>',
-				'{{ email }}',
-				'<label>Phone:</label>',
-				'{{ phone }}',
-				'<label>Username:</label>',
-				'<span class="username">{{ username }}</span>',
-			'</div>'
-		].join(''),
 		restrict: 'E'
 	};
 }
@@ -26,3 +31,7 @@ function ContactCard() {
 angular
 	.module('app')
 	.directive('contactCard', ContactCard);
+
+	// n this repo, we've got an app, containing a directive that uses $scope. 
+	// Refactor this directive to use controllerAs instead, 
+	// and then change the scope over to bindToController.
