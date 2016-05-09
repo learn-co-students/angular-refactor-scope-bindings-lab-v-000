@@ -1,24 +1,29 @@
 function ContactCard() {
 	return {
-		scope: {
+		scope: {},
+		template: [
+			'<div>',
+				'<h4>Contact Card</h4>',
+				'<label>Name:</label>',
+				'{{ card.name }}',
+				'<label>Email:</label>',
+				'{{ card.email }}',
+				'<label>Phone:</label>',
+				'{{ card.phone }}',
+				'<label>Username:</label>',
+				'<span class="username">{{ card.username }}</span>',
+			'</div>'
+		].join(''),
+		controller: function() {
+			
+		},
+		controllerAs: 'card',
+		bindToController: {
 			name: '=',
 			email: '=',
 			phone: '=',
 			username: '='
 		},
-		template: [
-			'<div>',
-				'<h4>Contact Card</h4>',
-				'<label>Name:</label>',
-				'{{ name }}',
-				'<label>Email:</label>',
-				'{{ email }}',
-				'<label>Phone:</label>',
-				'{{ phone }}',
-				'<label>Username:</label>',
-				'<span class="username">{{ username }}</span>',
-			'</div>'
-		].join(''),
 		restrict: 'E'
 	};
 }
@@ -26,3 +31,4 @@ function ContactCard() {
 angular
 	.module('app')
 	.directive('contactCard', ContactCard);
+
