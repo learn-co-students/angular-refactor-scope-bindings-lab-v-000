@@ -19,6 +19,14 @@ function ContactCard() {
 				'<span class="username">{{ username }}</span>',
 			'</div>'
 		].join(''),
+	
+		controllerAs: 'contact',
+		bindToController: {
+			name: '=',
+			email: '=',
+			phone: '=',
+			username: '='
+		},
 		restrict: 'E'
 	};
 }
