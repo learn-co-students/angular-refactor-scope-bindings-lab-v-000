@@ -18,15 +18,14 @@ function ContactCard() {
 		].join(''),
 		restrict: 'E',
 		controller: function () {
-			this.name: '=',
-			this.email: '=',
-			this.phone: '=',
-			this.username: '='
-    },
+	    },
 		controllerAs: 'contact',
-    bindToController: {
-        handle: '='
-    },
+	    bindToController: {
+	        name: '=',
+	        email: '=',
+	        phone: '=',
+	        username: '='
+	    }
 	};
 }
 
