@@ -26,7 +26,8 @@ function ContactCard() {
 		bindToController: {
 			name: '=',
 			email: '=',
-			phone: '='
+			phone: '=',
+			username: '='
 		},
 		restrict: 'E'
 	};
