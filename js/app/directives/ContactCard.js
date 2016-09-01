@@ -1,11 +1,6 @@
 function ContactCard() {
 	return {
-		scope: {
-			name: '=',
-			email: '=',
-			phone: '=',
-			username: '='
-		},
+		scope: { }, // the bound properties from scope can be moved down to bindToController
 		template: [
 			'<div>',
 				'<h4>Contact Card</h4>',
@@ -22,7 +17,12 @@ function ContactCard() {
 		restrict: 'E',
 		controller: 'ContactController',
 		controllerAs: 'ctrl',
-		bindToController: true
+		bindToController: {
+			name: '=',
+			email: '=',
+			phone: '=',
+			username: '='
+		}
 	};
 }
 
