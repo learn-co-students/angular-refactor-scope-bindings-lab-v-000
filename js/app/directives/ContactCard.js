@@ -1,6 +1,10 @@
 function ContactCard() {
 	return {
-		scope: {
+		scope: {},
+		controller: function () {
+		},
+		controllerAs: 'ctrl',
+		bindToController: {
 			name: '=',
 			email: '=',
 			phone: '=',
