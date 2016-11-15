@@ -1,6 +1,11 @@
 function ContactCard() {
 	return {
-		scope: {
+		scope: {},
+		controller: function() {
+			this.hi = "hello";
+		},
+		controllerAs: 'hey',
+		bindToController: {
 			name: '=',
 			email: '=',
 			phone: '=',
@@ -10,17 +15,17 @@ function ContactCard() {
 			'<div>',
 				'<h4>Contact Card</h4>',
 				'<label>Name:</label>',
-				'{{ name }}',
+				'{{ hey.name }}',
 				'<label>Email:</label>',
-				'{{ email }}',
+				'{{ hey.email }}',
 				'<label>Phone:</label>',
-				'{{ phone }}',
+				'{{ hey.phone }}',
 				'<label>Username:</label>',
-				'<span class="username">{{ username }}</span>',
+				'<span class="username">{{ hey.username }}</span>',
 			'</div>'
 		].join(''),
 		restrict: 'E'
-	};
+};
 }
 
 angular
