@@ -1,6 +1,6 @@
-function ContactCard() {
+function ContactCard($filter) {
 	return {
-		scope: {
+		bindToController: {
 			name: '=',
 			email: '=',
 			phone: '=',
@@ -10,15 +10,19 @@ function ContactCard() {
 			'<div>',
 				'<h4>Contact Card</h4>',
 				'<label>Name:</label>',
-				'{{ name }}',
+				'{{ ctrl.name }}',
 				'<label>Email:</label>',
-				'{{ email }}',
+				'{{ ctrl.email }}',
 				'<label>Phone:</label>',
-				'{{ phone }}',
+				'{{ ctrl.phone }}',
 				'<label>Username:</label>',
-				'<span class="username">{{ username }}</span>',
+				'<span class="username">{{ ctrl.username }}</span>',
 			'</div>'
 		].join(''),
+		controller: function () {
+			this.username = $filter('lowercase')(this.username)
+		},
+		controllerAs: 'ctrl',
 		restrict: 'E'
 	};
 }
