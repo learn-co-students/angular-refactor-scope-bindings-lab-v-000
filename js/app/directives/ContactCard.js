@@ -1,25 +1,26 @@
 function ContactCard() {
 	return {
-		scope: {
-			name: '=',
-			email: '=',
-			phone: '=',
-			username: '='
-		},
 		template: [
 			'<div>',
 				'<h4>Contact Card</h4>',
 				'<label>Name:</label>',
-				'{{ name }}',
+				'{{ c.contact.name }}',
 				'<label>Email:</label>',
-				'{{ email }}',
+				'{{ c.contact.email }}',
 				'<label>Phone:</label>',
-				'{{ phone }}',
+				'{{ c.contact.phone }}',
 				'<label>Username:</label>',
-				'<span class="username">{{ username }}</span>',
+				'<span class="username">{{ c.contact.username }}</span>',
 			'</div>'
 		].join(''),
-		restrict: 'E'
+		scope: {},
+		controller: function (){
+
+		},
+		controllerAs: 'c',
+		bindToController: {
+			contact: '='
+		}
 	};
 }
 
